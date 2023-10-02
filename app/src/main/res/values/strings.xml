@@ -1,5 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Android Labs</string>
-    <string name="hello_message">Hello World!</string>
-    <string name="ButtonText">I\'m a button</string>
+    <string name="hello_message">Here is more information</string>
+    <string name="ButtonText">Click Here</string>
+    <string name="GuiText">Look at my GUI</string>
+    <string name="CheckText">Check This Out!</string>
+    <string name="SwitchText">Switch ON/OFF</string>
+    <string name="HintText">Type Here</string>
 </resources>

@@ -2,45 +2,33 @@ package com.cst2335.klei0075
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.cst2335.klei0075.ui.theme.AndroidLabsTheme
+import android.widget.Button
+import android.widget.Switch
+import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : ComponentActivity() {
+class MainActivity1 : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            AndroidLabsTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener {
+            val toastMessage = getString(R.string.hello_message)
+            Toast.makeText(applicationContext, toastMessage, Toast.LENGTH_LONG).show()
         }
-    }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+        val switchButton = findViewById<Switch>(R.id.SwitchButton)
+        switchButton.setOnCheckedChangeListener { buttonView, isChecked ->
+            val switchState = if (isChecked) "on" else "off"
+            val message = "The switch is now $switchState"
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AndroidLabsTheme {
-        Greeting("Android")
+            val snackbar = Snackbar.make(findViewById(R.id.linear), message, Snackbar.LENGTH_LONG)
+            snackbar.setAction("Undo") {
+                switchButton.isChecked = !isChecked
+            }
+            snackbar.show()
+        }
     }
 }

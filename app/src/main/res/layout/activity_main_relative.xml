@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="@string/GuiText" />
+
+    <!-- Button -->
+    <Button
+        android:id="@+id/button"
+        android:layout_below="@id/textView"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:gravity="fill"
+        android:text="@string/ButtonText" />
+
+    <!-- CheckBox -->
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_below="@id/textView"
+        android:layout_toRightOf="@id/button"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:text="@string/CheckText"/>
+
+    <!-- Image Button -->
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
+        android:gravity="fill"
+        android:src="@drawable/flag" />
+
+    <!-- Switch -->
+    <Switch
+        android:id="@+id/SwitchButton"
+        android:layout_below="@id/button"
+        android:layout_toRightOf="@id/imageButton"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:gravity="fill"
+        android:text="@string/SwitchText" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_below="@id/imageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="fill"
+        android:hint="@string/HintText"
+        android:inputType="textPersonName">
+
+    </EditText>
+</RelativeLayout>
