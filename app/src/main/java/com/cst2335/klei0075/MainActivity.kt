@@ -11,8 +11,8 @@ class MainActivity1 : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_grid)
-
+        setContentView(R.layout.activity_main)
+        grid
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
             val toastMessage = getString(R.string.hello_message)
